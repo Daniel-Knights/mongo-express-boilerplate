@@ -1,10 +1,10 @@
 const mongodb = require('mongodb');
 
 const connectDb = mongodb.MongoClient.connect(process.env.MONGO_URI, {
-	useNewUrlParser: true,
-	useUnifiedTopology: true,
-})
-	.then(() => console.log('MongoDB Connected'))
-	.catch(err => console.error(err));
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+}).catch(err => console.error(err));
+
+if (connectDb) console.log('MongoDB Connected');
 
 module.exports = connectDb;
