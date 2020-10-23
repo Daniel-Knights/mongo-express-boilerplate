@@ -43,7 +43,7 @@ router.get('/', async (req, res) => {
 });
 
 // Add posts
-router.post('/', async (req, res) => {
+router.post('/', auth, async (req, res) => {
     const posts = await postsCollection();
 
     const post = await posts.insertOne({
