@@ -13,7 +13,7 @@ async function usersCollection() {
 
     console.log(`MongoDB (auth): ${connection.topology.s.state}`);
 
-    return connection.db('vue_express').collection('users');
+    return connection.db('db-name').collection('users');
 }
 
 router.get('/user', auth, async (req, res) => {
@@ -127,11 +127,11 @@ router.post('/signup', async (req, res) => {
                                     created_at: user.ops[0].created_at,
                                 };
 
-                                res.json({
+                                res.status(201).json({
                                     token,
                                     userInfo,
                                     message: 'User signed up successfully',
-                                }).send();
+                                });
                             }
                         );
                     })
