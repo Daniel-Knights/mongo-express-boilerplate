@@ -157,8 +157,11 @@ router.post('/', (req, res) => {
     }
 
     main().catch(err => {
-        console.log(err);
-        res.status(400).json({ success: false, msg: 'Message Failed to Send' });
+        res.status(400).json({
+            success: false,
+            msg: 'Message Failed to Send',
+            err: err.message,
+        });
     });
 });
 
