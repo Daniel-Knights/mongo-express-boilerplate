@@ -11,6 +11,7 @@ if (process.env.NODE_ENV !== 'production') {
 const app = express();
 
 // Middleware
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
 app.use(morgan('dev'));
@@ -31,7 +32,7 @@ console.log('JWT Secret:', hexStr);
 // Routes
 app.use('/api/posts', require('./routes/posts'));
 app.use('/api/auth', require('./routes/auth'));
-app.use('/api/direct', require('./routes/email/direct'));
+app.use('/api/email/direct', require('./routes/email/direct'));
 
 // app.use(function forceLiveDomain(req, res, next) {
 //     const host = req.get("Host");

@@ -1,7 +1,7 @@
 {
-    "name": "mevn_boilerplate",
+    "name": "mongo_express",
     "version": "1.0.0",
-    "description": "Full stack vue and express app",
+    "description": "Backend boilerplate using Express and MongoDB",
     "main": "server/server.js",
     "scripts": {
         "start": "node server/server.js",
