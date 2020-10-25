@@ -16,6 +16,7 @@ const auth = (req, res, next) => {
 
         // Add user from payload
         req.user = decoded;
+
         next();
     } catch (err) {
         res.status(400).json({ success: false, msg: 'Token is not valid' });
