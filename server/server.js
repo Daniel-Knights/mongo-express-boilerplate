@@ -44,7 +44,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // app.use(function forceSecureDomain(req, res, next) {
-//     res.redirect(301, "https://www.example.com");
+//     res.redirect(301, 'https://www.example.com' + req.originalUrl);
 
 //     next();
 // });
